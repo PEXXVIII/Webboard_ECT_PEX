@@ -6,12 +6,23 @@
     <title>Verify</title>
 </head>
 <body>
-<h1 style="text-align: center;">Webboard PEXXVIII</h1>
+<h1 style="text-align: center;">Webboard PEXJAV</h1>
     <hr>
     <div style="text-align: center;">
     เข้าสู่ระบบด้วย<br>
-    Login = <?php  echo $_POST['login']; ?> <br> 
-    password = <?php  echo $_POST['pwd']; ?> 
+    <?php
+    
+    $Login= ($_POST['login']);
+    $password = ($_POST['pwd']);
+    if($Login == "admin" && $password == "ad1234"){
+        echo "ยินดีตอนรับคุณ ADMIN";
+    }elseif ($Login == "member" && $password == "mem123"){
+        echo "ยินดีต้อนรับคุณ MAMBER";
+    }else 
+    echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
+
+    ?>
+    <a href="index.php">"กลับไปหน้าหลัก"</a>
     </div><br>
    
     

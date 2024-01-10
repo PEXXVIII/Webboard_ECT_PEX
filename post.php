@@ -6,12 +6,18 @@
     <title>Document</title>
 </head>
 <header>
-    <H1>Webboard PEXXVIII</H1>
+    <H1>Webboard PEXJAV</H1>
 </header>
 <body  style="text-align: center;">
     <?php
-    echo "ต้องการดูกระทู้ $_GET[id]";
-
+    $id = $_GET['id'];
+    if($id % 2 == 0){
+        echo "ต้องการกระทู้หมายเลข $id <br>";
+        echo "เป็นหมายเลขกระทู้หมายเลขคู่";
+    }else {
+        echo "ต้องการกระทู้หมายเลข $id <br>";
+        echo "เป็นหมายเลขกระทู้หมายเลขคี่";
+    }
     ?>
     <form>
     <table style="border: 2px solid #D4D2F2; width: auto;" align="center">
@@ -21,7 +27,7 @@
             <tr><td colspan="2" align="center"><input type="submit" value="ส่งข้อความ"></td></tr>
         </table>
     </form>
-    <a href="index.html">กลับไปหน้าหลัก</a>
+    <a href="index.php">กลับไปหน้าหลัก</a>
     
 </body>
 </html>
