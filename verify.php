@@ -13,10 +13,7 @@ if(isset($_SESSION['id'])){
     <title>Verify</title>
 </head>
 <body>
-<h1 style="text-align: center;">Webboard PEXJAV</h1>
-    <hr>
-    <div style="text-align: center;">
-    เข้าสู่ระบบด้วย<br>
+
     <?php
     
     $Login= ($_POST['login']);
@@ -25,18 +22,27 @@ if(isset($_SESSION['id'])){
         $_SESSION["username"] ="admin";
         $_SESSION["role"] = "a";
         $_SESSION["id"] = session_id();
-        echo "ยินดีตอนรับคุณ ADMIN";
+        header("location:index.php");
+        die();
+        //echo "ยินดีตอนรับคุณ ADMIN";
     }elseif ($Login == "member" && $password == "mem123"){
         $_SESSION["username"] = "member";
         $_SESSION["role"] = "m";
         $_SESSION["id"] = session_id();
-        echo "ยินดีต้อนรับคุณ MAMBER";
-    }else 
-    echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
+        header("location:index.php");
+        die();
+        //echo "ยินดีต้อนรับคุณ MAMBER";
+       
+    }else {
+        $_SESSION['error']='error';
+        header("location:login.php");
+        die();
+    }
+    //echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
 
     ?>
-    <a href="index.php">"กลับไปหน้าหลัก"</a>
-    </div><br>
+    //<a href="index.php">"กลับไปหน้าหลัก"</a>
+
    
     
 </body>
