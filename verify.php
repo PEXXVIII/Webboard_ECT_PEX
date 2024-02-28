@@ -10,7 +10,7 @@ $conn=new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
 $sql="SELECT * FROM user where login='$login' and password=sha1('$pwd')";
 $result=$conn->query($sql);
 if($result->rowCount()==1){
-   $data=reset->fetch(PDO::FETCH_ASSOC);
+   $data=$result->fetch(PDO::FETCH_ASSOC);
         $_SESSION["username"] =$data['login'];
         $_SESSION["role"] =$data['role'];
         $_SESSION["user"] =$data['id'];
