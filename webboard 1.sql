@@ -58,7 +58,7 @@ CREATE TABLE `post` (
   `content` varchar(2048) NOT NULL,
   `post_date` datetime NOT NULL,
   `cat_id` int(11) NOT NULL,
-  `user` int(11) NOT NULL
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -69,7 +69,7 @@ CREATE TABLE `post` (
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `login` int(32) NOT NULL,
+  `login` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL,
   `name` varchar(64) NOT NULL,
   `gender` char(1) NOT NULL,
