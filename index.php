@@ -38,7 +38,7 @@ session_start();
       charset=utf8","root","");
       $sql="SELECT * FROM category";
       foreach($conn->query($sql) as $row){
-        echo"<li>< class=dropdown-item href=#>$row[name]></a></li>";
+        echo"<li><a class='dropdown-item'>$row[name]</a></li>";
       }
       $conn=null;
     ?>
