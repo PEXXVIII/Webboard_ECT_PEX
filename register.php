@@ -20,6 +20,16 @@
     <h1>สมัครสมาชิก</h1><hr>
 </header>
 <body>
+    <script>
+        function onBlurPwd(){
+            let pwd=document.getElementById("pwd");
+            let pwd2=document.getElementById("pwd2");
+            if(pwd.value!==pwd2.value){
+                alert("รหัสผ่านทั้งสองช่องไม่ตรงกัน");
+                pwd2.value="";
+            }
+        }
+    </script>
     <div class="container">
     <?php @include('nav.php') ?>
         <div class="row mt-4">
@@ -52,6 +62,11 @@
                                     <input type="password" name="pwd" id="pwd" class="form-control" required>
                                 </div>
                             </div>
+                            <div class="row mt-3">
+                                <label for="pwd" class="col-lg-3 col-form-label">ใส่รหัสซ้ำ:</label>
+                                <div class="col-lg-9">
+                                    <input type="password" name="pwd2" id="pwd2" onblur="onBlurPwd()" class="form-control" required>
+                                </div>
                             <div class="row mt-3">
                                 <label for="name" class="col-lg-3 col-form-label">ชื่อ-นามสกุล:</label>
                                 <div class="col-lg-9">
